@@ -30,6 +30,10 @@ RUN apt-get -y install sudo
 # Create the root user for the postgresql db
 RUN sudo -u postgres createuser -P -d -r -s root
 
+# Setup p/w
+echo root
+echo root
+
 # Create a db named wiki_db
 RUN sudo -u postgres createdb -O root wiki_db
 
