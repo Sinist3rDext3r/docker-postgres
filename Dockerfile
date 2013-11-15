@@ -28,11 +28,7 @@ RUN apt-get -y install postgresql-9.2 postgresql-contrib-9.2 postgresql-client-9
 RUN apt-get -y install sudo
 
 # Create the root user for the postgresql db
-RUN sudo -u postgres createuser -P -d -r -s root
-
-# Setup p/w
-echo root
-echo root
+RUN sudo -u postgres createuser -P -w -d -r -s root
 
 # Create a db named wiki_db
 RUN sudo -u postgres createdb -O root wiki_db
