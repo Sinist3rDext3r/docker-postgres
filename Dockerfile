@@ -1,5 +1,7 @@
 # Dockerfile for PostgreSQL
 # 	http://www.postgresql.org/
+#	http://www.postgresql.org/docs/9.1/static/app-createuser.html
+# 	http://zaiste.net/2013/08/docker_postgresql_how_to/
 
 FROM ubuntu
 MAINTAINER Shaba Abhiram <shabarivas@gmail.com>
@@ -28,7 +30,7 @@ RUN apt-get -y install postgresql-9.2 postgresql-contrib-9.2 postgresql-client-9
 RUN apt-get -y install sudo
 
 # Create the root user for the postgresql db
-RUN sudo -u postgres createuser -w -d -r -s root
+RUN sudo -u postgres createuser -d -r -s root
 
 # Create a db named wiki_db
 RUN sudo -u postgres createdb -O root wiki_db
