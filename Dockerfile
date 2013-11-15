@@ -28,10 +28,10 @@ RUN apt-get -y install postgresql-9.2 postgresql-contrib-9.2 postgresql-client-9
 RUN apt-get -y install sudo
 
 # Create the root user for the postgresql db
-RUN sudo -u postgres createuser -w -d -r -s root
+RUN postgres createuser -w -d -r -s root
 
 # Create a db named wiki_db
-RUN sudo -u postgres createdb -O root wiki_db
+RUN postgres createdb -O root wiki_db
 
 # Edit some files...
 RUN echo host	all		all		0.0.0.0/0		md5 >> /etc/postgresql/9.2/main/pg_hba.conf
