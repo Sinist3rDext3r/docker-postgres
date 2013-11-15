@@ -16,8 +16,8 @@ RUN apt-get upgrade -y
 
 # Install python-software-properties 
 # 	http://packages.ubuntu.com/lucid/python-software-properties
-RUN apt-get install python-software-properties
-RUN apt-get install software-properties-common
+RUN apt-get -y install python-software-properties
+RUN apt-get -y install software-properties-common
 
 # Install PostgreSQL - See notes for Ubuntu PPA 
 #	http://www.postgresql.org/download/linux/ubuntu/
